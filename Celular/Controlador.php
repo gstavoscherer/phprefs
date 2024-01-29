@@ -9,12 +9,11 @@
         public function colocarChip($c);
         public function tirarChip();
         public function efetuaLig();
-        public function desligaLig();
         public function carregarBateria();
-        public function aumentarVolume();
-        public function diminuirVolume();
+        public function mudarVolume($v);
         public function abrirCamera();
         public function fecharCamera();
+        public function verificarBateria();
         public function abrirTelefone();
         public function fecharTelefone();
 

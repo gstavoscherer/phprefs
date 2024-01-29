@@ -12,8 +12,8 @@
         $c1 = new ControleRemoto();
         $c1->ligar();
         $c1->maisVolume();
+        $c1->play();
         $c1->abrirMenu();
-        print_r($c1);
         ?>
     </pre>
 </body>

@@ -13,7 +13,6 @@
 
         $cell1->colocarChip("TIM");
         $cell1->ligar();
-        $cell1->abrirTelefone();
         $cell1->abrirCamera();
         $cell1->tirarFoto();
         print_r($cell1);

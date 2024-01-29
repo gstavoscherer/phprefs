@@ -151,6 +151,7 @@ class Celular implements Controlador
 }
     public function efetuaLig()
     {
+
     }
     public function desligaLig()
     {
@@ -187,8 +188,13 @@ class Celular implements Controlador
     public function abrirTelefone()
     {
         if ($this->getLigado() == true){
-            $this->setTelefone(true);
+            if($this->getCamera() == false){
+                $this->setTelefone(true);
             echo "<p>Telefone aberto com sucesso</p><br>";
+            } else {
+                echo "<p>Impossível abrir o telefone com a câmera aberta</p><br>";
+            }
+            
     } else {
         echo "<p>Celular desligado, impossível abrir o telefone</p><br>";
     }

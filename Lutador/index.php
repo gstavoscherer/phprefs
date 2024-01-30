@@ -11,11 +11,23 @@
     <pre>
         <?php
         include_once("Lutador.php");
+        include_once("Luta.php");
         $l = array();
         $l[0] = new Lutador("Josué", "Brasil", 29, 1.71, 90, 3, 2, 3);
         $l[1] = new Lutador("DeadBody", "EUA", 28, 1.93, 81.6, 13, 0, 2);
         $l[2] = new Lutador("Jean Pierre", "França", 21, 1.80, 105.7, 12, 2, 4);
         $l[3] = new Lutador("Carlos", "Espanha", 25, 1.78, 66, 10, 5, 4);
+
+        $UEC01 = new Luta();
+
+        $UEC01->marcarLuta($l[0], $l[2]);
+
+        $UEC01->lutar();
+
+        $UEC01->lutar();
+
+        $l[0]->status();
+        $l[2]->status();
 
         ?>
     </pre>

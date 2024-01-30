@@ -48,14 +48,16 @@ class Luta
 
     public function marcarLuta($l1, $l2)
     {
-        if (($l1->getCategoria() == $l2->getCategoria()) && ($l1 != $l2)) {
+        if (($l1->getCategoria() === $l2->getCategoria()) && ($l1 != $l2)) {
             $this->setAprovada(true);
             $this->setDesafiado($l1);
             $this->setDesafiante($l2);
+            echo "<p>Luta aprovada</p>";
         } else {
             $this->setAprovada(false);
             $this->setDesafiado(null);
             $this->setDesafiante(null);
+            echo "<p>Luta não aprovada";
         }
     }
     public function lutar()
@@ -71,9 +73,14 @@ class Luta
                     $this->getDesafiado()->empatarLuta();
                     break;
                 case 1:
-                    echo "<p>". $this->getDesafiado()->getNome();
+                    echo "<p>" . $this->getDesafiado()->getNome() . " venceu!</p>";
+                    $this->getDesafiado()->ganharLuta();
+                    $this->getDesafiante()->perderLuta();
                     break;
                 case 2:
+                    echo "<p>" . $this->getDesafiante()->getNome() . " venceu!</p>";
+                    $this->getDesafiante()->ganharLuta();
+                    $this->getDesafiado()->perderLuta();
                     break;
             }
         }
